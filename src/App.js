@@ -2,6 +2,8 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+import { Counter } from './reactHooks/useState';
+
 function App() {
   return (
     <div className="App">
@@ -19,6 +21,9 @@ function App() {
           Learn React
         </a>
       </header>
+      <div>
+        <Counter initialCount={0} />
+      </div>
     </div>
   );
 }
