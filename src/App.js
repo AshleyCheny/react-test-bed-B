@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 
 import { Counter } from './reactHooks/useState';
+import { Timer } from './reactHooks/useEffect';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
       </header>
       <div>
         <Counter initialCount={0} />
+        <Timer />
       </div>
     </div>
   );
