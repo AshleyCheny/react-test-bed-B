@@ -4,6 +4,7 @@ import './App.css';
 
 import { Counter } from './reactHooks/useState';
 import { Timer } from './reactHooks/useEffect';
+import { Counter2 } from './reactHooks/useReducer';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
       <div>
         <Counter initialCount={0} />
         <Timer />
+        <Counter2 />
       </div>
     </div>
   );
