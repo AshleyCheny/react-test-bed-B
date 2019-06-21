@@ -1,10 +1,16 @@
 import React, { useState, useEffect } from 'react';
 
+/**
+ * 1. Basic Usage
+ * @param {*} props 
+ */
 function Timer(props) {
+    // create/update data here
     const [timer, updateTimer] = useState(0);
 
     /**
      * useEffect - will be called after the component rendered in the DOM -> the browser has painted
+     *           - combines componentDidMount, componentDidUpdate, and componentWillUnmount
      * 
      * @example
      *  useEffect(didUpdateFunction, array)
@@ -33,6 +39,7 @@ function Timer(props) {
         // pass an empty array([]) if only want effect to run once(on mount)
     }, [props.update]);
     
+    // use data here
     return (
       <div>
         {timer}
@@ -40,4 +47,42 @@ function Timer(props) {
     );
   }
 
-  export { Timer };
+/**
+ * 2. How to fetch data from an API with hooks
+ */
+function FetchApi() {
+  // 1. define the states
+  const [hasError, setErrors] = useState(false);
+  const [response, setResponse] = useState({});
+
+  /**
+   * 4. async function to make the API call
+   * use the functions got above to update the states
+   */
+  async function fetchData() {
+    const res = await fetch("https://google.com");
+    res
+      .json()
+      .then(res => setResponse(res))
+      .catch(err => setErrors(err));
+  }
+
+  // 3. update the states
+  useEffect(() => {
+    // call fetchData function when component did mount
+    fetchData();
+  }, []); // fetch once(on mount)
+
+  // 2. use the states
+  return (
+    <div>
+      {hasError}
+      {response}
+    </div>
+  );
+}
+
+  export { 
+    Timer,
+    FetchApi
+  };
