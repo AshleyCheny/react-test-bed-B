@@ -31,3 +31,14 @@
     transform: rotate(360deg);
   }
 }
+
+.text-loop {
+  height: 100vh;
+  background: lightgrey;
+  color: white;
+  text-align: left;
+}
+
+.text-loop-wrapper {
+  padding-top: 100px;
+}
