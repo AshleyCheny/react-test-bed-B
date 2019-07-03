@@ -38,7 +38,16 @@
   color: white;
   text-align: left;
 }
-
+/* 
 .text-loop-wrapper {
+  
   padding-top: 100px;
+} */
+.text-loop-content {
+  display: flex;
+  height: 100px;
+  align-items: center;
+  color: white;
+  font-size: 32px;
+  font-weight: 600;
 }
